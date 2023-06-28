@@ -1,0 +1,148 @@
+.intro {
+  display: grid;
+  grid-template-columns:
+    [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
+    [content-end] 1fr [main-end];
+  grid-gap: var(--content-padding, 0);
+  overflow: hidden;
+}
+
+.intro__bg {
+  grid-row: 1 / 2;
+  grid-column: 1 / -1;
+  position: relative;
+  background-color: #000;
+}
+
+.intro__bg-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.intro__content {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  grid-row: 1 / 2;
+  z-index: 20;
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  padding-top: 5.6rem;
+  padding-bottom: 3rem;
+  z-index: 5;
+
+  @include breakpoint(mobile) {
+    padding: 3rem 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    min-height: calc(100svh - 6rem);
+  }
+}
+
+.intro__text-content {
+  width: 30%;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  @include breakpoint(mobile) {
+    width: auto;
+    flex-grow: 0;
+  }
+}
+
+.intro__heading {
+  margin-bottom: 3.3rem;
+  font-size: 9.6rem;
+  font-weight: 700;
+
+  @include breakpoint(mobile) {
+    font-size: 4rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+  }
+
+  & > em {
+    font-style: normal;
+    color: var(--primary-color);
+  }
+}
+
+.intro__desc {
+  font-size: 4.8rem;
+  font-weight: 700;
+  line-height: 120%;
+  margin-bottom: 12rem;
+
+  @include breakpoint(mobile) {
+    font-size: 2.4rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+}
+
+.intro__date {
+  font-size: 3.2rem;
+  margin-bottom: 3.5rem;
+  font-weight: 700;
+  line-height: 120%;
+
+  @include breakpoint(mobile) {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+}
+
+.intro__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1.8rem 6.6rem;
+  background-color: #fff;
+  color: black;
+  align-self: flex-start;
+  font-size: 2.3rem;
+  font-weight: 700;
+  line-height: 110%;
+  transition: background-color 0.2s, color 0.2s;
+  &:link,
+  &:visited {
+    color: black;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      color: white;
+      background-color: var(--primary-color);
+    }
+  }
+
+  @include breakpoint(mobile) {
+    padding: 1rem 2rem;
+    font-size: 2.2rem;
+  }
+}
+
+.intro__image-wrapper {
+  width: 65rem;
+  flex-shrink: 0;
+  margin-right: -26rem;
+
+  @include breakpoint(mobile) {
+    width: auto;
+    margin: 0;
+  }
+}
+
+.intro__image {
+  display: block;
+  width: 100%;
+  height: auto;
+}

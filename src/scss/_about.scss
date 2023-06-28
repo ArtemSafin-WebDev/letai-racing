@@ -1,0 +1,102 @@
+.about {
+  display: grid;
+  grid-template-columns:
+    [main-start] 1fr [content-start] minmax(0, var(--container-width, 0))
+    [content-end] 1fr [main-end];
+  grid-gap: var(--content-padding, 0);
+  background-color: #fff;
+  color: black;
+}
+
+.about__content {
+  grid-column-start: content-start;
+  grid-column-end: content-end;
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-gap: 3rem;
+  grid-row-gap: 3.5rem;
+  padding-top: 4rem;
+  padding-bottom: 10rem;
+
+  @include breakpoint(mobile) {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 2rem;
+    align-items: center;
+  }
+}
+
+.about__text-block {
+  font-size: 3.2rem;
+  font-weight: 500;
+  letter-spacing: -0.064rem;
+
+  @include breakpoint(mobile) {
+    font-size: 1.8rem;
+    grid-column: 1 / -1;
+  }
+
+  @include breakpointMF(small-tablet) {
+    &:nth-child(1) {
+      grid-column: 1 / 8;
+    }
+
+    &:nth-child(4) {
+      grid-column: 7 / -1;
+      text-align: right;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 5rem;
+    font-weight: 700;
+    line-height: 110%;
+
+    @include breakpoint(mobile) {
+      font-size: 2.4rem;
+    }
+  }
+
+  & > p {
+    margin-top: 3.5rem;
+
+    @include breakpoint(mobile) {
+      margin-top: 1.5rem;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}
+
+.about__letai-racing {
+  @include breakpointMF(small-tablet) {
+    grid-column: 8 / -1;
+    padding-right: 1rem;
+  }
+}
+
+.about__letai-racing-image {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.about__letai {
+  @include breakpointMF(small-tablet) {
+    grid-column: 1 / 7;
+    padding-right: 5.6rem;
+  }
+}
+
+.about__letai-image {
+  width: 100%;
+  height: auto;
+  display: block;
+}

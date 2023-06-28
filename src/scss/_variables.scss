@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #fe5000;
+  --text-color: white;
+  --content-padding: 4rem;
+  --root-ui: "PT Root UI", sans-serif;
+  --container-width: 123rem;
+
+  @include breakpoint(mobile) {
+    --content-padding: 2rem;
+  }
+}
