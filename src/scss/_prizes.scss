@@ -96,6 +96,14 @@
         width: 7.2rem;
         height: 7.2rem;
       }
+
+      .prizes__item-terms {
+        font-size: 2.4rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        padding: 1rem 2rem;
+      }
     }
     &:nth-child(2) {
       border-radius: 2.5rem;
@@ -112,6 +120,14 @@
         font-weight: 700;
         line-height: 100%;
       }
+
+      .prizes__item-terms {
+        font-size: 2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        padding: 0.8rem 1.5rem;
+      }
     }
     &:nth-child(3) {
       border-radius: 1.5rem;
@@ -127,6 +143,15 @@
         font-size: 2.2rem;
         font-weight: 700;
         line-height: 100%;
+      }
+
+      .prizes__item-terms {
+        font-size: 1.4rem;
+        padding: 0.7rem 1.2rem;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 110%;
+        text-transform: uppercase;
       }
     }
   }
@@ -149,6 +174,25 @@
   height: 3rem;
   font-size: 1.6rem;
   line-height: 1;
+}
+
+.prizes__item-terms {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-top: -1.4rem;
+  margin-left: -1.4rem;
+  border-radius: 3rem;
+  border: 2px solid #fff;
+  background: #000;
+  color: white;
+  text-transform: uppercase;
+  font-size: 1rem;
+  padding: 0.5rem 0.8rem;
+
+  @include breakpoint(mobile) {
+    border-width: 1px;
+  }
 }
 
 .prizes__merch {

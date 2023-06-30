@@ -40,6 +40,24 @@
   }
 }
 
+.location__map {
+  position: relative;
+  &::before {
+    content: "";
+    display: block;
+    padding-bottom: 56.25%;
+  }
+}
+
+.location__map-element {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: lightgrey;
+}
+
 .location__map-image {
   display: block;
   width: 100%;
